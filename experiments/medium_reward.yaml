@@ -1,0 +1,15 @@
+# Medium reward: correctness + progress.
+# Progress gives a gradient signal (partial credit) on top of the binary correctness.
+# This should converge faster than sparse on tasks with partial-credit validators.
+# No format/conciseness — so no auxiliary hacking risk.
+experiment:
+  name: medium_reward
+  description: "Correctness + progress — adding a gradient signal"
+
+reward_composer:
+  solved_threshold: 1.0
+  signals:
+    - name: correctness
+      weight: 0.7
+    - name: progress
+      weight: 0.3

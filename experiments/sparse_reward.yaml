@@ -1,0 +1,13 @@
+# Sparse reward baseline: correctness only.
+# Clean signal, no auxiliary information.
+# Convergence is slow on hard tasks but no reward hacking risk.
+# This is the Reflexion-style baseline.
+experiment:
+  name: sparse_reward
+  description: "Correctness only — sparse reward baseline"
+
+reward_composer:
+  solved_threshold: 1.0
+  signals:
+    - name: correctness
+      weight: 1.0

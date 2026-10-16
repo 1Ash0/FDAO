@@ -1,0 +1,16 @@
+# Correctness-dominant: correctness at 0.9, small auxiliary signals.
+# Expected: near-identical to sparse but auxiliary signals provide weak gradient.
+# Hypothesis: slightly faster convergence than sparse, no hacking.
+experiment:
+  name: correctness_dominant
+  description: "Correctness dominant (0.9) with small auxiliary signals"
+
+reward_composer:
+  solved_threshold: 1.0
+  signals:
+    - name: correctness
+      weight: 0.90
+    - name: conciseness
+      weight: 0.06
+    - name: format_compliance
+      weight: 0.04

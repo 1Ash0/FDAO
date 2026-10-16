@@ -1,0 +1,19 @@
+# Dense reward: all four main signals.
+# Correctness is primary but the agent gets richer feedback each iteration.
+# Risk: agent may prioritise the easier auxiliary signals over correctness.
+# This is the FDAO recommended config for most tasks.
+experiment:
+  name: dense_reward
+  description: "Correctness + progress + conciseness + format — full signal"
+
+reward_composer:
+  solved_threshold: 1.0
+  signals:
+    - name: correctness
+      weight: 0.60
+    - name: progress
+      weight: 0.20
+    - name: conciseness
+      weight: 0.12
+    - name: format_compliance
+      weight: 0.08
